@@ -23,9 +23,18 @@ Clone this reposiory into a directory then execute the following within the crea
 
 		```
 		mkdir -p dog_fact_build
-		cd dog_fact_build
-		cmake ..
-		cmake --build .
+		cmake -S ./dog-fact -B ./dog_fact_build
+		cmake --build ./dog_fact_build
 		```
   
-and you should be able to execute the *dog_fact* program from the build directory.
+and you should be able to execute the *dog_fact* program from the build directory *dog_fact_build*.
+
+## With g++
+Clone this reposiory into a directory then execute the following within the created directory
+
+		```
+		mkdir -p dog_fact_build
+		g++ ./dog-fact/src/gen_dog_fact.cpp -Wall -std=c++11 -pthread -lssl -lcrypto -DCPPHTTPLIB_OPENSSL_SUPPORT -o ./dog_fact_build/dog_fact
+		```
+		
+  and you should be able to execute the *dog_fact* program from the build directory *dog_fact_build*.  
